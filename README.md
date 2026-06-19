@@ -1,17 +1,27 @@
-# careops
+# CareOps
 
-A new Flutter project.
+**Supported Living Management App** — built with Flutter.
 
-## Getting Started
+## What It Does
+- Staff scheduling & shift management
+- Client tracking with daily notes
+- Incident reporting with photos
+- Analytics dashboard with real-time stats
+- Offline-first with local database
 
-This project is a starting point for a Flutter application.
+## Tech Stack
+- Flutter 3.x + Dart 3
+- Clean Architecture (Data / Domain / Presentation)
+- BLoC pattern for state management
+- sqflite for local database
+- fl_chart for data visualization
+- local_auth for biometric security
 
-A few resources to get you started if this is your first Flutter project:
+## My Background
+4 years as Flutter developer building business apps with databases, financial calculations, and reporting. After relocating to the US, I worked as a Supported Living Supervisor and saw the need for better digital tools in care management. This app combines my development experience with my domain knowledge.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Screenshots
+[Add screenshots here]
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo Video
+[Link to demo video - coming soon]
