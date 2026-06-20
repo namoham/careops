@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../staff/presentation/pages/staff_list_page.dart';
+
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -26,17 +28,17 @@ class DashboardPage extends StatelessWidget {
             const SizedBox(height: 24),
             Row(
               children: [
-                _buildStatCard('Staff', '12', Icons.people, Colors.blue),
+                _buildStatCard(context, 'Staff', '12', Icons.people, Colors.blue),
                 const SizedBox(width: 16),
-                _buildStatCard('Clients', '8', Icons.person, Colors.green),
+                _buildStatCard(context, 'Clients', '8', Icons.person, Colors.green),
               ],
             ),
             const SizedBox(height: 16),
             Row(
               children: [
-                _buildStatCard('Incidents', '3', Icons.warning, Colors.orange),
+                _buildStatCard(context, 'Incidents', '3', Icons.warning, Colors.orange),
                 const SizedBox(width: 16),
-                _buildStatCard('Shifts', '5', Icons.schedule, Colors.purple),
+                _buildStatCard(context, 'Shifts', '5', Icons.schedule, Colors.purple),
               ],
             ),
             const SizedBox(height: 24),
@@ -63,30 +65,39 @@ class DashboardPage extends StatelessWidget {
     );
   }
 
-  Widget _buildStatCard(String title, String value, IconData icon, Color color) {
+  Widget _buildStatCard(BuildContext context, String title, String value, IconData icon, Color color) {
     return Expanded(
-      child: Card(
-        elevation: 4,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Icon(icon, color: color, size: 32),
-              const SizedBox(height: 8),
-              Text(
-                value,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+      child: GestureDetector(
+        onTap: () {
+          if (title == 'Staff') {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const StaffListPage()),
+            );
+          }
+        },
+        child: Card(
+          elevation: 4,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Icon(icon, color: color, size: 32),
+                const SizedBox(height: 8),
+                Text(
+                  value,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                title,
-                style: TextStyle(
-                  color: Colors.grey[600],
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.grey[600],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
